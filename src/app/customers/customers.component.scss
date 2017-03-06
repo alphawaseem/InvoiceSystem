@@ -1,13 +1,17 @@
-section {
+.customers {
+    background: black;
+    color: white;
+  section {
     h1 {
-        text-align: center;
+      text-align: center;
     }
-  ul {
-    list-style: none;
-    li {
-      display: inline-block;
-      width: 30%;
-      margin: 1%;
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        width: 30%;
+        margin: 1%;
+      }
     }
   }
 }

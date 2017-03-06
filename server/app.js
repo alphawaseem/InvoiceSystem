@@ -129,7 +129,7 @@ var app = module.exports = express();
 app.set('port', process.env.PORT || 8000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '..', 'src')));
+// app.use(express.static(path.join(__dirname, '..', 'src')));
 app.use(cors());
 
 // CUSTOMERS API
@@ -138,7 +138,7 @@ app.route('/api/customers')
   .get(function(req, res) {
     Customer.findAll().then(function(customers) {
       res.json(customers);
-    })
+    });
   })
   .post(function(req, res) {
     var customer = Customer.build(_.pick(req.body, ['name', 'address', 'phone']));

@@ -1,8 +1,20 @@
+<div class="customers">
+
 <section>
     <h1>Customers</h1>
+    <form>
+      <legend>Add Customer </legend>
+
+          <label for="name" > Name : <input #name name="name" id="name" type="text" placeholder="Enter customer name"></label>
+          <label for="address" > Address : <input #address name="address" id="address" type="text" placeholder="Enter customer address"></label>
+          <label for="phone" > Phone : <input #phone name="phone" id="phone" type="tel" placeholder="Enter customer phone"></label>
+          <input type="submit" value="submit">
+     
+    </form>
   <ul>
     <li *ngFor="let customer of customers">
       <app-customer [customer]='customer'></app-customer>
     </li>
   </ul>
 </section>
+</div>

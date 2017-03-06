@@ -1,5 +1,10 @@
 section {
-    background: gray;
-    color: white;
-    text-align: center;
+  background: palegreen;
+  color: darkslategrey;
+  text-align: center;
+  border-radius: 10px;
+}
+
+section:hover {
+  transform: scale(1.1);
 }
