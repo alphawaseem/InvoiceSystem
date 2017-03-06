@@ -21,6 +21,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { InvoiceItemsComponent } from './invoice-items/invoice-items.component';
 import { InvoiceItemComponent } from './invoice-item/invoice-item.component';
 
+
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'customers', component: CustomersComponent },
@@ -29,8 +30,8 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductComponent },
   { path: 'invoices', component: InvoicesComponent },
   { path: 'invoices/:id', component: InvoiceComponent },
-  { path: 'invoices/:id/items', component: InvoiceItemsCompnent },
-  { path: 'invoices/:id/items/:id', component: InvoiceItemCompnent }
+  { path: 'invoices/:id/items', component: InvoiceItemsComponent },
+  { path: 'invoices/:id/items/:id', component: InvoiceItemComponent }
 
 ];
 
@@ -44,8 +45,7 @@ const routes: Routes = [
     InvoicesComponent,
     InvoiceComponent,
     InvoiceComponent,
-    InvoiceItemsComponent,
-    InvoiceItemComponent
+    InvoiceItemsComponent
   ],
   imports: [
     BrowserModule,
