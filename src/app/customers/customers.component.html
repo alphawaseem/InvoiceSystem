@@ -2,12 +2,12 @@
 
 <section>
     <h1>Customers</h1>
-    <form>
+    <form #f="ngForm" (ngSubmit)="addCustomer(f.value)">
       <legend>Add Customer </legend>
 
-          <label for="name" > Name : <input #name name="name" id="name" type="text" placeholder="Enter customer name"></label>
-          <label for="address" > Address : <input #address name="address" id="address" type="text" placeholder="Enter customer address"></label>
-          <label for="phone" > Phone : <input #phone name="phone" id="phone" type="tel" placeholder="Enter customer phone"></label>
+          <label for="name" > Name : <input name="name" id="name" type="text" placeholder="Enter customer name" ngModel></label>
+          <label for="address" > Address : <input #address name="address" id="address" type="text" placeholder="Enter customer address" ngModel></label>
+          <label for="phone" > Phone : <input #phone name="phone" id="phone" type="tel" placeholder="Enter customer phone" ngModel></label>
           <input type="submit" value="submit">
      
     </form>
