@@ -6,18 +6,18 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CustomersService {
 
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'http://localhost:8000/api/customers';
   constructor(private http: Http) {
   }
 
   getCustomers() {
-    return this.http.get(`${this.baseUrl}/api/customers`).map(res => {
+    return this.http.get(`${this.baseUrl}`).map(res => {
       return res.json();
     });
   }
 
   getCustomer(id) {
-    return this.http.get(`${this.baseUrl}/api/customers/${id}`).map(res => {
+    return this.http.get(`${this.baseUrl}/${id}`).map(res => {
       return res.json();
     });
   }
@@ -25,7 +25,7 @@ export class CustomersService {
   editCustomer(id, newCustomerData) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.put(`${this.baseUrl}/api/customers/${id}`, newCustomerData).map(res => {
+    return this.http.put(`${this.baseUrl}/${id}`, newCustomerData).map(res => {
       return res.json();
     });
   }
@@ -33,7 +33,7 @@ export class CustomersService {
   addCustomer(customer: Customer) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(`${this.baseUrl}/api/customers`, JSON.stringify(customer), {
+    return this.http.post(`${this.baseUrl}`, JSON.stringify(customer), {
       headers: headers
     }).map(res => {
       return res.json();
@@ -41,7 +41,7 @@ export class CustomersService {
   }
 
   deleteCustomer(id) {
-    return this.http.delete(`${this.baseUrl}/api/customers/${id}`).map(res => res);
+    return this.http.delete(`${this.baseUrl}/${id}`).map(res => res);
   }
 
 }
