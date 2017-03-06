@@ -1,0 +1,21 @@
+<div class="products">
+  <section>
+    <h1>Products</h1>
+    <form #f="ngForm" (ngSubmit)="addProduct(f.value)">
+      <legend>Add Product </legend>
+      <label for="name"> Name : <input name="name" id="name" type="text" placeholder="Enter product name" ngModel></label>
+      <label for="phone"> Price : <input name="price" id="price" type="number" placeholder="Enter product price" ngModel></label>
+      <input type="submit" value="submit">
+    </form>
+    <ul>
+      <li *ngFor="let product of products" (click)="getProduct(product.id)">
+        <section *ngIf="product">
+          <h3>{{product.name}}</h3>
+          <p>{{product.price}} </p>
+        </section>
+        <a (click)="editProduct(product.id,{name:'Baby Wipes',price:10})">Edit</a>
+        <a (click)="deleteProduct(product.id)">Delete</a>
+      </li>
+    </ul>
+  </section>
+</div>

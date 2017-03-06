@@ -1,0 +1,26 @@
+.products {
+  background: black;
+  color: white;
+  section {
+    h1 {
+      text-align: center;
+    }
+    section {
+      background: palegreen;
+      color: darkslategrey;
+      text-align: center;
+      border-radius: 10px;
+    }
+    section:hover {
+      transform: scale(1.1);
+    }
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        width: 30%;
+        margin: 1%;
+      }
+    }
+  }
+}

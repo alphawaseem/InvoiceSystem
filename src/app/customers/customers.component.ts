@@ -28,10 +28,29 @@ export class CustomersComponent implements OnInit {
     });
   }
 
+  getCustomer(id) {
+    this.cusService.getCustomer(id).subscribe(res => {
+      console.log(res);
+    });
+  }
+
+  editCustomer(id, customer) {
+    this.cusService.editCustomer(id, customer).subscribe(res => {
+      console.log('Updated ', res);
+      this.getCustomers();
+    });
+  }
+
+  deleteCustomer(id) {
+    this.cusService.deleteCustomer(id).subscribe(res => {
+      console.log('Deleted ', res);
+      this.getCustomers();
+    });
+  }
   addCustomer(customer: Customer) {
     console.log(customer);
-    this.cusService.addCustomer(customer).subscribe(res=>{
-      console.log('Added',res);
+    this.cusService.addCustomer(customer).subscribe(res => {
+      console.log('Added', res);
     });
     this.getCustomers();
   }
