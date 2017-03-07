@@ -45,7 +45,8 @@ const routes: Routes = [
     InvoicesComponent,
     InvoiceComponent,
     InvoiceComponent,
-    InvoiceItemsComponent
+    InvoiceItemsComponent,
+    InvoiceItemComponent
   ],
   imports: [
     BrowserModule,
